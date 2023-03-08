@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <title>IMovie - CsCodeway</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/phone.css" />
+    <link rel="shortcut icon" href="style/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top">
+        <form id="movieForm" autocomplete="off">
+          <input type="text" id="movie" placeholder="Search Here..." />
+          <div button id="btn" type="reset">╳</div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="wrapper" id="wrapper">
+        <div class="wrap-img"></div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#movieForm").submit(function (event) {
+          event.preventDefault();
+
+          var movie = $("#movie").val();
+
+          var result = "";
+
+          const url = `https://www.omdbapi.com/?t=${movie}&apikey=e295dcaf`;
+
+          $.ajax({
+            method: "GET",
+            url: url,
+            success: function (data) {
+              //   console.log(data);
+
+              if (data.Title) {
+                document.getElementById("wrapper").style.display = "flex";
+                result = `
+
+                                <div class="wrapper">
+                                    <div class="wrap-img">
+                                        <img src="${data.Poster}" alt="image not available on data">
+                                    </div>
+                                    <div class="movie-container">
+                                        <div class="content">
+                                            <h4>Name:</h4>
+                                            <p>${data.Title}</p>
+                                        </div>
+                                        <div class="content">
+                                            <h4>Release Date:</h4>
+                                            <p>${data.Released}</p>
+                                        </div>
+                                        <div class="content">
+                                            <h4>Timing:</h4>
+                                            <p>${data.Runtime}</p>
+                                        </div>
+                                        <div class="content">
+                                            <h4>Type:</h4>
+                                            <p>${data.Type}</p>
+                                        </div>
+                                        <div class="content">
+                                            <h4>Director:</h4>
+                                            <p>${data.Director}</p>
+                                        </div>
+                                        <div class="content">
+                                            <h4>Actor:</h4>
+                                            <p>${data.Actors}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                `;
+
+                $(".wrapper").html(result);
+              } else if (movie == "") {
+                document.getElementById("wrapper").style.display = "flex";
+
+                result = `
+
+                                <div class="wrapper-end">
+                                    <div class="movie-end">
+                                        <div class="content-end">
+                                            <p>Please enter a movie name</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                `;
+                $(".wrapper").html(result);
+              } else {
+                document.getElementById("wrapper").style.display = "flex";
+                result = `
+
+                                <div class="wrapper-end">
+                                    <div class="movie-end">
+                                        <div class="content-end">
+                                            <p>${data.Error}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                `;
+                $(".wrapper").html(result);
+              }
+            },
+          });
+        });
+      });
+
+      let btn = document.getElementById("btn");
+      let movie = document.getElementById("movie");
+
+      movie.addEventListener("keyup", function () {
+        let searchSminput = movie.value.length;
+        if (searchSminput == 0) {
+          btn.style.display = "none";
+        } else {
+          btn.style.display = "block";
+        }
+      });
+
+      btn.addEventListener("click", function () {
+        movie.value = "";
+        btn.style.display = "none";
+        movie.focus();
+      });
+    </script>
+  </body>
+</html>

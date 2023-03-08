@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Poppins:ital@1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #8495cd;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
+  background-color: #ffffff;
+  max-height: 100vh;
+  min-height: 10vh;
+  min-width: 70vw;
+  max-width: 70vw;
+  border-radius: 10px;
+}
+
+.top {
+  margin: 10px;
+  padding: 10px;
+}
+
+form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-family: "Baloo 2", cursive;
+}
+
+input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(132, 132, 132);
+  padding-left: 10px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "Baloo 2", cursive;
+}
+
+#btn {
+  margin-left: 1rem;
+  display: none;
+  cursor: pointer;
+}
+
+button {
+  margin-left: 10px;
+  padding: 7px 15px;
+  background-color: rgba(132, 0, 255, 0.655);
+  color: #ffffff;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: "Baloo 2", cursive;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+#wrapper {
+  display: none;
+  justify-content: center;
+}
+
+.wrapper {
+  margin: 20px;
+  display: flex;
+}
+
+.wrap-img {
+  border-radius: 10px;
+  margin-left: 15px;
+  height: 200px;
+  width: 35%;
+}
+
+.wrap-img img {
+  height: 100%;
+  box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
+  width: 100%;
+  border-radius: 10px;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  margin: 10px 0px 0 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+.wrapper-end {
+  display: flex;
+  margin: 0;
+}

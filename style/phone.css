@@ -1,0 +1,119 @@
+@media only screen and (max-width: 5000px) and (min-width: 850px) {
+  .container {
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 970px) and (min-width: 600px) {
+  .wrap-img {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .top {
+    padding: 0;
+    margin: 10px;
+    margin-top: 25px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  input {
+    margin-bottom: 10px;
+    width: 90%;
+  }
+
+  #btn {
+    margin: 5px 0 10px 0;
+    font-size: 15px;
+  }
+
+  button {
+    padding: 2px 8px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrap-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .wrap-img img {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    max-width: 90vw;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  .wrap-img {
+    width: 85%;
+  }
+
+  .wrap-img img {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .content {
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  h4 {
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 139px) {
+  body {
+    display: none;
+  }
+}
